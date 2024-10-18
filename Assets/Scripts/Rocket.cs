@@ -63,9 +63,6 @@ public class Rocket : MonoBehaviour
             _rb2d.AddForce(Vector2.up * SPEED, ForceMode2D.Impulse);
             fuel -= 10;
 
-            Debug.Log(fuel);
-
-            Debug.Log(_rb2d.velocity.magnitude);
         }
         else
         {
