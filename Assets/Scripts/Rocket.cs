@@ -11,7 +11,7 @@ public class Rocket : MonoBehaviour
 
     [SerializeField]
     private Rigidbody2D _rb2d;
-    private float fuel = 100f;
+    public float fuel = 100f;
     
     private readonly float SPEED = 5f;
     private readonly float FUELPERSHOOT = 10f;
@@ -52,7 +52,7 @@ public class Rocket : MonoBehaviour
 
     }
 
-    // 액션 이벤트로 isGameOver일때 Gameover 불러오도록 처리?
+
 
 
     public void Shoot()
@@ -70,10 +70,7 @@ public class Rocket : MonoBehaviour
         else
         {
          
-
-            //움직임이 멈추면 GameOver 불러오기 - 코루틴과 Invoke()?
             StartCoroutine(PlayerDead());
-
 
         }
           
@@ -91,7 +88,7 @@ public class Rocket : MonoBehaviour
 
 
         yield return new WaitForSeconds(1f);
-        GameOver();
+        GameOverScreen();
 
     }
 
@@ -119,7 +116,7 @@ public class Rocket : MonoBehaviour
     }
 
     
-    private void GameOver()
+    private void GameOverScreen()
     {
 
         if (score >= highScore)
